@@ -24,6 +24,4 @@ const SplashScreen = SplashScreenModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return SplashScreen.multiply(a, b);
-}
+export default SplashScreen;

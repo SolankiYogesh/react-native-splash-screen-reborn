@@ -3,7 +3,7 @@ import { TurboModuleRegistry } from 'react-native';
 
 export interface Spec extends TurboModule {
   hide(): void;
-  show(): void;
+  show(fullScreen?: boolean): void;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('SplashScreen');

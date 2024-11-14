@@ -2,21 +2,27 @@ package com.splashscreen
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
+
 
 class SplashScreenModule internal constructor(context: ReactApplicationContext) :
   SplashScreenSpec(context) {
+  private val reactcontect = context
+
+  @ReactMethod
+  override fun hide() {
+    SplashScreen.hide(reactcontect.currentActivity)
+  }
+
+  @ReactMethod
+  override fun show(fullScreen: Boolean?) {
+    SplashScreen.show(reactcontect.currentActivity,fullScreen!==null)
+  }
 
   override fun getName(): String {
     return NAME
   }
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-  @ReactMethod
-  override fun multiply(a: Double, b: Double, promise: Promise) {
-    promise.resolve(a * b)
-  }
+
 
   companion object {
     const val NAME = "SplashScreen"

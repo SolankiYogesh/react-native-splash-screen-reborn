@@ -1,7 +1,6 @@
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, Text} from 'react-native';
 import * as React from 'react';
 import SplashScreen from 'react-native-splash-screen';
-console.log('SplashScreen', SplashScreen);
 const App = () => {
   React.useEffect(() => {
     SplashScreen.hide();
@@ -9,6 +8,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       <Text>SplashScreen Demo with new arch(0.76.1)</Text>
     </SafeAreaView>
   );
@@ -20,5 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
 });
